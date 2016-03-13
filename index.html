@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Energy Dashboard - Tasmania</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dashboard.css" media="screen" title="no title" charset="utf-8">
+
+    <script src="liquidFillGauge.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js" charset="utf-8"></script>
+    <script src="Chart.Scatter.js" charset="utf-8"></script>
+
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="page-header">
+        <h1><i class="fa fa-power-off"></i> Tasmanian Energy Dashboard </h1>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12" style="text-align:center">
+              <div class="strike">
+                <span>Current % of Full Storage Energy</span>
+              </div>
+              <svg id="fillgauge1" width="97%" height="200"></svg>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" style="text-align:center">
+
+
+
+              <div class="strike">
+                <span>Current Storage Level</span>
+              </div>
+
+  <div class="bg-danger">
+
+              <span class="number">
+                2241 GWh
+              </span>
+              <p class="lead">
+                <i class="fa fa-caret-down"></i> 81 GWh (3.5%)<br />
+                <small>Change since previous week</small>
+              </p>
+  </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-12" style="text-align:center">
+              <div class="strike">
+                <span>Energy Storage - 12 Week Trend</span>
+              </div>
+              <canvas id="shortChart" style="width:100%; height:380px" ></canvas>
+
+
+            </div>
+          </div>
+
+          <!--<div class="strike">
+            <span>Historical Storage Levels</span>
+          </div>
+          <canvas id="longChart" style="width:100%; height: 400px"></canvas> -->
+
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-12">
+          <p class="lead">
+            Data current as at 7 March 2016, Source ( <a href="http://www.hydro.com.au/water/energy-data" target="_blank">http://www.hydro.com.au/water/energy-data</a> )
+          </p>
+        </div>
+      </div>
+    </div>
+      <script src="dashboard.js" charset="utf-8"></script>
+  </body>
+</html>
