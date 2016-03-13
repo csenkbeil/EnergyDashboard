@@ -2,7 +2,7 @@ body {
 
 }
 
- .liquidFillGaugeText { font-family: 'Roboto', sans-serif; font-weight: bold; }
+.liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
 
 .strike {
 display: block;
