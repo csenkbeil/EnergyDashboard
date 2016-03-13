@@ -45,3 +45,8 @@ margin-left: 15px;
   background-color: #A94442;
   color: #FFF;
 }
+
+/*.twitter-share-button[style] { vertical-align: text-bottom !important; } */
+.fb-share-button span {
+   top: -5px;
+}

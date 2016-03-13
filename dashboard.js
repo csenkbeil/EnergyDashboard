@@ -44,7 +44,11 @@ d3.csv("storage.csv", function(d) {
 				scaleShowLabels: true,
 				scaleType: "date",
 				scaleLabel: "<%=value%> GWh",
-        pointDot: true
+        pointDot: true,
+				scaleOverride : true,
+        scaleSteps : 8,
+        scaleStepWidth : 500,
+        scaleStartValue : 0
 			});
 /*
   var ctx2 = document.getElementById("longChart").getContext("2d");
