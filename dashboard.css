@@ -55,6 +55,10 @@ margin-left: 15px;
   font-size: 15px;
 }
 
+h1,h2,h3,h4,h5 {
+  font-family: 'News Cycle', sans-serif;
+}
+
 .line1 {
        fill: none;
        stroke: #3182bd;

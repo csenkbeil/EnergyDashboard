@@ -1,11 +1,13 @@
 // Requires d3.js library
 
 var formatDate2 = d3.time.format("%d/%m/%Y");
+var formatPercentage = d3.format('.1%');
 
 function timeChart() {
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
       width = 760,
       height = 425,
+      maxCapacity = 14437,
       xValue = function(d) { return d[0]; },
       y1Value = function(d) { return d[1]; },
 //      y2Value = function(d) { return d[2]; },
@@ -157,6 +159,7 @@ function timeChart() {
         g.append("rect")
             .style('fill', 'none')
             .style('pointer-events', 'all')
+            .attr('id', 'mouseMat')
             .attr("width", width)
             .attr("height", height)
             .on("mouseover", function() { focus.style("display", null); })
@@ -206,6 +209,7 @@ function timeChart() {
 
             focus.attr("transform", "translate(" + xScale(d[i][0]) + "," + yScale(d[i][1]) + ")");
             focus.select("#textLine1").text('Dam Energy Storage: ' + d[i][1] + 'GWh' );
+            focus.select("#textLine2").text('% of Full Capacity: ' + formatPercentage(d[i][1]/maxCapacity) + '' );
             focus.select("#textLine3").text('Date: ' + formatDate2(d[i][0]));
 
 
@@ -243,7 +247,9 @@ function resizeSVGChart() {
     svg.selectAll(".line1")
         .attr("d", line1);
 
-
+    d3.select('#mouseMat')
+    .attr("width", width)
+    .attr("height", height);
 
     legend.remove();
 
@@ -332,6 +338,12 @@ function resizeSVGChart() {
   chart.y2 = function(_) {
     if (!arguments.length) return y2Value;
     y2Value = _;
+    return chart;
+  };
+
+  chart.MaxCapacity = function(_) {
+    if (!arguments.length) return maxCapacity;
+    maxCapacity = _;
     return chart;
   };
 
