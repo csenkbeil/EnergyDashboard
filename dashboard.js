@@ -1,4 +1,4 @@
-var gauge1 = loadLiquidFillGauge("fillgauge1", 15.5);
+var gauge1 = loadLiquidFillGauge("fillgauge1", 14.8);
 
 var formatDate = d3.time.format("%Y-%m-%d");
 
