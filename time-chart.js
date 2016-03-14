@@ -3,7 +3,7 @@
 var formatDate2 = d3.time.format("%d/%m/%Y");
 
 function timeChart() {
-  var margin = {top: 20, right: 20, bottom: 30, left: 70},
+  var margin = {top: 20, right: 20, bottom: 30, left: 50},
       width = 760,
       height = 425,
       xValue = function(d) { return d[0]; },
