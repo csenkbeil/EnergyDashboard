@@ -39,8 +39,8 @@
     <link rel="stylesheet" href="dashboard.css" media="screen" title="no title" charset="utf-8">
 
     <script src="liquidFillGauge.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js" charset="utf-8"></script>
-    <script src="Chart.Scatter.js" charset="utf-8"></script>
+    <script src="time-chart.js" charset="utf-8"></script>
+
     <!-- Asynchronous Google Analytics snippet -->
     <script>
       var _gaq = _gaq || [];
@@ -116,18 +116,14 @@
           <div class="row">
             <div class="col-md-12" style="text-align:center">
               <div class="strike">
-                <span>Hydro Dam Energy Storage Levels - 12 Week History</span>
+                <span>Hydro Dam Energy Storage Levels</span>
               </div>
-              <canvas id="shortChart" style="width:100%; height:410px" ></canvas>
+              <div id="shortChart"></div>
 
 
             </div>
           </div>
 
-          <!--<div class="strike">
-            <span>Historical Storage Levels</span>
-          </div>
-          <canvas id="longChart" style="width:100%; height: 400px"></canvas> -->
 
         </div>
       </div>
