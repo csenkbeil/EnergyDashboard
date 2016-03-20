@@ -49,6 +49,9 @@ function timeChart() {
 
       // Otherwise, create the skeletal chart.
       var gEnter = svg.enter().append("svg").append("g");
+      gEnter.append("rect").attr("class", "warning");
+      gEnter.append("rect").attr("class", "critical");
+
       gEnter.append("path").attr("class", "line1");
 //      gEnter.append("path").attr("class", "line2");
       gEnter.append("g").attr("class", "x axis");
@@ -99,6 +102,22 @@ function timeChart() {
       g.select(".y.axis")
         .call(yAxis);
 
+      g.select('.warning')
+        .attr('x', xScale(xScale.domain()[0]))
+        .attr('y', yScale(maxCapacity*0.25))
+        .attr('stroke', '#fcf8e3')
+        .attr('fill','#fcf8e3')
+        .attr('height', yScale(0)-yScale(maxCapacity*(0.25-0.065)))
+        .attr('width',(xScale(xScale.domain()[1]))-(xScale(xScale.domain()[0])));
+
+
+      g.select('.critical')
+        .attr('x', xScale(xScale.domain()[0]))
+        .attr('y', yScale(maxCapacity*0.065))
+        .attr('stroke', '#f2dede')
+        .attr('fill','#f2dede')
+        .attr('height', yScale(0)-yScale(maxCapacity*(0.065)))
+        .attr('width',(xScale(xScale.domain()[1]))-(xScale(xScale.domain()[0])));
 
 
       // Bisect function to find xaxis array item
@@ -211,16 +230,7 @@ function timeChart() {
             focus.select("#textLine1").text('Dam Energy Storage: ' + d[i][1] + 'GWh' );
             focus.select("#textLine2").text('% of Full Capacity: ' + formatPercentage(d[i][1]/maxCapacity) + '' );
             focus.select("#textLine3").text('Date: ' + formatDate2(d[i][0]));
-
-
-
-
-
-
         }
-
-
-
 
 d3.select(window).on("resize", resizeSVGChart);
 function resizeSVGChart() {
@@ -231,6 +241,19 @@ function resizeSVGChart() {
     // Resize things
     xScale.range([0, width - margin.left - margin.right]);
     yScale.range([height - margin.top - margin.bottom, 0]);
+
+    svg.select('.warning')
+      .attr('x', xScale(xScale.domain()[0]))
+      .attr('y', yScale(maxCapacity*0.25))
+      .attr('height', yScale(0)-yScale(maxCapacity*(0.25-0.065)))
+      .attr('width',(xScale(xScale.domain()[1]))-(xScale(xScale.domain()[0])));
+
+
+    svg.select('.critical')
+      .attr('x', xScale(xScale.domain()[0]))
+      .attr('y', yScale(maxCapacity*0.065))
+      .attr('height', yScale(0)-yScale(maxCapacity*(0.065)))
+      .attr('width',(xScale(xScale.domain()[1]))-(xScale(xScale.domain()[0])));
 
     svg.style('width', width + 'px');
 
