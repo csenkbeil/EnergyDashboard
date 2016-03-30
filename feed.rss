@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
 <channel>
   <title>Tasmanian Hydro Dam Levels</title>
   <link>http://www.cliffsenkbeil.com/EnergyDashboard/</link>
+  <atom:link href="http://www.cliffsenkbeil.com/EnergyDashboard/feed.rss" rel="self" type="application/rss+xml" />
   <description>Current Hydro Dam Energy Levels</description>
   <image>
      <url>http://www.cliffsenkbeil.com/EnergyDashboard/StorageLevel28Mar2016.jpg</url>
-     <title>Current Hydro Dam Energy Levels</title>
+     <title>Tasmanian Hydro Dam Levels</title>
      <link>http://www.cliffsenkbeil.com/EnergyDashboard/</link>
    </image>
   <item>
     <title>Dam Levels at 13.9%</title>
     <link>http://www.cliffsenkbeil.com/EnergyDashboard/</link>
     <description>Tasmanian Hydro Dam Energy Storage Levels at 13.9%</description>
+    <guid>http://www.cliffsenkbeil.com/EnergyDashboard/#28Mar2016</guid>
   </item>
 </channel>
 
