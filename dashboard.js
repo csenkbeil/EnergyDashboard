@@ -4,14 +4,14 @@ config1.circleColor = "#FF7777";
 config1.textColor = "#FF4444";
 config1.waveTextColor = "#FFAAAA";
 config1.waveColor = "#FFDDDD";
-*/
+
 
 config1.circleColor = "#E2C0A1";
 config1.textColor = "#E5B142";
 config1.waveTextColor = "#D5C3AD";
 config1.waveColor = "#D7BE88";
-
-var gauge1 = loadLiquidFillGauge("fillgauge1", 21.9, config1);
+*/
+var gauge1 = loadLiquidFillGauge("fillgauge1", 27.1);
 
 var formatDate = d3.time.format("%Y-%m-%d");
 
