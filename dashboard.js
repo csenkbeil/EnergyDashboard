@@ -11,7 +11,7 @@ config1.textColor = "#E5B142";
 config1.waveTextColor = "#D5C3AD";
 config1.waveColor = "#D7BE88";
 */
-var gauge1 = loadLiquidFillGauge("fillgauge1", 29.7);
+var gauge1 = loadLiquidFillGauge("fillgauge1", 34.3);
 var formatDate = d3.time.format("%Y-%m-%d");
 
 d3.csv("storage.csv", function(d) {
